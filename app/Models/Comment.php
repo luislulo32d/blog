@@ -10,4 +10,11 @@ class Comment extends Model
     use HasFactory;
     protected $guarded = ['id', 'created_at', 'update_at'];
 
+    //Relaciones Inversa
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    public function article(){
+        return $this->belongsTo(Article::class);
+    }
 }

@@ -10,4 +10,8 @@ class Category extends Model
     use HasFactory;
     protected $guarded = ['id', 'created_at', 'update_at'];
 
+    //Relaciones 1-n
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
 }
